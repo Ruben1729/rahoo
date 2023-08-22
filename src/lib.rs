@@ -7,7 +7,7 @@ pub use self::query::*;
 
 pub fn search(file_path: &str, query: &str) -> Vec<FnInfo> {
     let mut visitor = MatchBuilder::new(query);
-    visitor.visit_node(file_path);
+    visitor.visit_node(file_path.to_string());
     visitor.matches
 }
 
